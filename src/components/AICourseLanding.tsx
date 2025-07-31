@@ -4,14 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-ai-course.jpg";
 import robotBg from "@/assets/robot-bg.jpg";
-
 const AICourseLanding = () => {
   const [timeLeft, setTimeLeft] = useState({
     hours: 47,
     minutes: 59,
     seconds: 32
   });
-
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
 
@@ -20,16 +18,26 @@ const AICourseLanding = () => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
         if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
+          return {
+            ...prev,
+            seconds: prev.seconds - 1
+          };
         } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+          return {
+            ...prev,
+            minutes: prev.minutes - 1,
+            seconds: 59
+          };
         } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+          return {
+            hours: prev.hours - 1,
+            minutes: 59,
+            seconds: 59
+          };
         }
         return prev;
       });
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
@@ -40,156 +48,155 @@ const AICourseLanding = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
-  const stats = [
-    { icon: Zap, text: "7 ngày → MVP hoàn chỉnh", color: "text-accent" },
-    { icon: Target, text: "0 kiến thức → Build được app", color: "text-primary" },
-    { icon: DollarSign, text: "$30/tháng → Thay vì $5000/tháng thuê dev", color: "text-secondary" }
-  ];
-
-  const painPoints = [
-    { icon: "😩", text: "Có ý tưởng hay nhưng không biết code" },
-    { icon: "💸", text: "Thuê developer quá đắt (3000-5000$/tháng)" },
-    { icon: "⏰", text: "Học lập trình mất 2-3 năm" },
-    { icon: "🤯", text: "Các tutorial online quá phức tạp và lỗi thời" }
-  ];
-
-  const beforeAfter = [
-    { before: "Học code 2-3 năm", after: "Học quy trình 1-2 tuần" },
-    { before: "Viết từng dòng code thủ công", after: "AI viết code, bạn chỉ đạo" },
-    { before: "6+ tháng cho 1 dự án", after: "7 ngày cho MVP" },
-    { before: "Thuê dev $3000-5000/tháng", after: "Tự làm với cost $30/tháng" },
-    { before: "Không biết bắt đầu từ đâu", after: "Roadmap rõ ràng từng bước" }
-  ];
-
-  const curriculum = [
-    {
-      title: "KIẾN THỨC NỀN TẢNG",
-      icon: "📚",
-      lessons: 3,
-      items: [
-        "AI trong lập trình là gì?",
-        "MVP vs Sản phẩm hoàn chỉnh",
-        "Bộ công cụ AI cần thiết"
-      ]
-    },
-    {
-      title: "CHUẨN BỊ DỰ ÁN",
-      icon: "🎯",
-      lessons: 2,
-      items: [
-        "Viết PRD - Bản thiết kế sản phẩm",
-        "Chia nhỏ công việc với TaskMaster"
-      ]
-    },
-    {
-      title: "THỰC HIỆN",
-      icon: "⚡",
-      lessons: 2,
-      items: [
-        "Coding với Claude - Từng bước một",
-        "Review và sửa lỗi với CodeRabbit"
-      ]
-    },
-    {
-      title: "DỰ ÁN THỰC TẾ",
-      icon: "🚀",
-      lessons: 2,
-      items: [
-        "Xây dựng website bán hàng đầu tiên",
-        "Tối ưu hóa và cải thiện"
-      ]
-    }
-  ];
-
-  const projectFeatures = [
-    { icon: "🏠", text: "Trang chủ responsive đẹp mắt" },
-    { icon: "🛍️", text: "Catalog sản phẩm với search" },
-    { icon: "🛒", text: "Giỏ hàng và checkout hoàn chỉnh" },
-    { icon: "📱", text: "Mobile-friendly 100%" },
-    { icon: "⚡", text: "Tốc độ tải nhanh (<3s)" },
-    { icon: "🔒", text: "An toàn và bảo mật" }
-  ];
-
-  const testimonials = [
-    {
-      rating: 5,
-      text: "Tôi từ không biết gì về code đến có website bán hàng hoàn chỉnh chỉ trong 10 ngày. AI thực sự thần kỳ!",
-      author: "Minh Anh",
-      role: "Owner tiệm bánh"
-    },
-    {
-      rating: 5,
-      text: "Khóa học thực tế nhất tôi từng tham gia. Không lý thuyết suông, toàn bộ là hands-on practice.",
-      author: "Đức Thành",
-      role: "Freelancer"
-    },
-    {
-      rating: 5,
-      text: "Sau khóa học, tôi đã nhận được 3 dự án làm website cho bạn bè. ROI thu hồi trong 1 tháng!",
-      author: "Thu Hương",
-      role: "Marketing Manager"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "Tôi hoàn toàn không biết code, có học được không?",
-      answer: "Khóa học được thiết kế dành riêng cho người mới. Bạn chỉ cần biết sử dụng máy tính cơ bản."
-    },
-    {
-      question: "Cần những công cụ gì và tốn bao nhiều tiền?",
-      answer: "Tổng cost tools khoảng $30/tháng. Có thể dùng free trial để hoàn thành khóa học."
-    },
-    {
-      question: "7 ngày có thật sự đủ không?",
-      answer: "7 ngày cho MVP cơ bản. Nếu muốn polish hơn có thể mất 2-3 tuần. Vẫn nhanh hơn 10x so với cách truyền thống."
-    },
-    {
-      question: "Sau khóa học có support không?",
-      answer: "Support 1-1 trong 30 ngày + cộng đồng học viên private lifetime."
-    },
-    {
-      question: "Nếu không hài lòng thì sao?",
-      answer: "Hoàn tiền 100% trong 30 ngày, không cần lý do."
-    }
-  ];
-
-  const socialProof = [
-    { number: "1000+", label: "Học viên thành công" },
-    { number: "4.9/5", label: "Đánh giá trung bình" },
-    { number: "95%", label: "Hoàn thành khóa học" },
-    { number: "200+", label: "MVP đã được deploy" }
-  ];
-
+  const stats = [{
+    icon: Zap,
+    text: "7 ngày → MVP hoàn chỉnh",
+    color: "text-accent"
+  }, {
+    icon: Target,
+    text: "0 kiến thức → Build được app",
+    color: "text-primary"
+  }, {
+    icon: DollarSign,
+    text: "$30/tháng → Thay vì $5000/tháng thuê dev",
+    color: "text-secondary"
+  }];
+  const painPoints = [{
+    icon: "😩",
+    text: "Có ý tưởng hay nhưng không biết code"
+  }, {
+    icon: "💸",
+    text: "Thuê developer quá đắt (3000-5000$/tháng)"
+  }, {
+    icon: "⏰",
+    text: "Học lập trình mất 2-3 năm"
+  }, {
+    icon: "🤯",
+    text: "Các tutorial online quá phức tạp và lỗi thời"
+  }];
+  const beforeAfter = [{
+    before: "Học code 2-3 năm",
+    after: "Học quy trình 1-2 tuần"
+  }, {
+    before: "Viết từng dòng code thủ công",
+    after: "AI viết code, bạn chỉ đạo"
+  }, {
+    before: "6+ tháng cho 1 dự án",
+    after: "7 ngày cho MVP"
+  }, {
+    before: "Thuê dev $3000-5000/tháng",
+    after: "Tự làm với cost $30/tháng"
+  }, {
+    before: "Không biết bắt đầu từ đâu",
+    after: "Roadmap rõ ràng từng bước"
+  }];
+  const curriculum = [{
+    title: "KIẾN THỨC NỀN TẢNG",
+    icon: "📚",
+    lessons: 3,
+    items: ["AI trong lập trình là gì?", "MVP vs Sản phẩm hoàn chỉnh", "Bộ công cụ AI cần thiết"]
+  }, {
+    title: "CHUẨN BỊ DỰ ÁN",
+    icon: "🎯",
+    lessons: 2,
+    items: ["Viết PRD - Bản thiết kế sản phẩm", "Chia nhỏ công việc với TaskMaster"]
+  }, {
+    title: "THỰC HIỆN",
+    icon: "⚡",
+    lessons: 2,
+    items: ["Coding với Claude - Từng bước một", "Review và sửa lỗi với CodeRabbit"]
+  }, {
+    title: "DỰ ÁN THỰC TẾ",
+    icon: "🚀",
+    lessons: 2,
+    items: ["Xây dựng website bán hàng đầu tiên", "Tối ưu hóa và cải thiện"]
+  }];
+  const projectFeatures = [{
+    icon: "🏠",
+    text: "Trang chủ responsive đẹp mắt"
+  }, {
+    icon: "🛍️",
+    text: "Catalog sản phẩm với search"
+  }, {
+    icon: "🛒",
+    text: "Giỏ hàng và checkout hoàn chỉnh"
+  }, {
+    icon: "📱",
+    text: "Mobile-friendly 100%"
+  }, {
+    icon: "⚡",
+    text: "Tốc độ tải nhanh (<3s)"
+  }, {
+    icon: "🔒",
+    text: "An toàn và bảo mật"
+  }];
+  const testimonials = [{
+    rating: 5,
+    text: "Tôi từ không biết gì về code đến có website bán hàng hoàn chỉnh chỉ trong 10 ngày. AI thực sự thần kỳ!",
+    author: "Minh Anh",
+    role: "Owner tiệm bánh"
+  }, {
+    rating: 5,
+    text: "Khóa học thực tế nhất tôi từng tham gia. Không lý thuyết suông, toàn bộ là hands-on practice.",
+    author: "Đức Thành",
+    role: "Freelancer"
+  }, {
+    rating: 5,
+    text: "Sau khóa học, tôi đã nhận được 3 dự án làm website cho bạn bè. ROI thu hồi trong 1 tháng!",
+    author: "Thu Hương",
+    role: "Marketing Manager"
+  }];
+  const faqs = [{
+    question: "Tôi hoàn toàn không biết code, có học được không?",
+    answer: "Khóa học được thiết kế dành riêng cho người mới. Bạn chỉ cần biết sử dụng máy tính cơ bản."
+  }, {
+    question: "Cần những công cụ gì và tốn bao nhiều tiền?",
+    answer: "Tổng cost tools khoảng $30/tháng. Có thể dùng free trial để hoàn thành khóa học."
+  }, {
+    question: "7 ngày có thật sự đủ không?",
+    answer: "7 ngày cho MVP cơ bản. Nếu muốn polish hơn có thể mất 2-3 tuần. Vẫn nhanh hơn 10x so với cách truyền thống."
+  }, {
+    question: "Sau khóa học có support không?",
+    answer: "Support 1-1 trong 30 ngày + cộng đồng học viên private lifetime."
+  }, {
+    question: "Nếu không hài lòng thì sao?",
+    answer: "Hoàn tiền 100% trong 30 ngày, không cần lý do."
+  }];
+  const socialProof = [{
+    number: "1000+",
+    label: "Học viên thành công"
+  }, {
+    number: "4.9/5",
+    label: "Đánh giá trung bình"
+  }, {
+    number: "95%",
+    label: "Hoàn thành khóa học"
+  }, {
+    number: "200+",
+    label: "MVP đã được deploy"
+  }];
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden robot-grid scanlines">
+  return <div className="min-h-screen bg-background text-foreground overflow-x-hidden robot-grid scanlines">
       {/* Robot Header */}
       <header className="fixed top-0 left-0 right-0 z-50 robot-card border-b border-primary/20">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="container mx-auto py-3 flex justify-between items-center px-[91px]">
           <div className="flex items-center gap-3">
             <Bot className="w-8 h-8 text-primary robot-pulse" />
-            <div className="text-xl font-bold holographic robot-text" data-text="AI COURSE">AI COURSE</div>
+            <div data-text="AI COURSE" className="text-xl font-bold holographic robot-text mx-0">AI COURSE</div>
           </div>
-          <Button 
-            className="robot-btn text-primary-foreground font-semibold robot-text"
-            onClick={() => scrollToSection('pricing')}
-          >
-            ĐĂNG KÝ NGAY - 14.999.000 đ
-          </Button>
+          
         </div>
       </header>
 
       {/* Section 1: Hero */}
       <section id="hero" className="hero-gradient min-h-screen flex items-center relative pt-20">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10" style={{
+        backgroundImage: `url(${heroImage})`
+      }} />
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -208,34 +215,23 @@ const AICourseLanding = () => {
 
             {/* Stats Row */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {stats.map((stat, index) => (
-                <Card key={index} className="robot-card">
+              {stats.map((stat, index) => <Card key={index} className="robot-card">
                   <CardContent className="p-6 text-center relative z-10">
                     <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color} robot-pulse`} />
                     <p className="font-semibold text-lg robot-text">{stat.text}</p>
                     <div className="loading-bar mt-4"></div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                size="lg" 
-                className="robot-btn bg-primary text-primary-foreground text-lg px-8 py-4 relative"
-                onClick={() => scrollToSection('pricing')}
-              >
+              <Button size="lg" className="robot-btn bg-primary text-primary-foreground text-lg px-8 py-4 relative" onClick={() => scrollToSection('pricing')}>
                 <Cpu className="mr-2 w-5 h-5 robot-pulse" />
                 ĐĂNG KÝ NGAY - 14.999.000 đ
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="robot-card border-primary text-primary hover:bg-primary/10 text-lg px-8 py-4"
-                onClick={() => scrollToSection('curriculum')}
-              >
+              <Button size="lg" variant="outline" className="robot-card border-primary text-primary hover:bg-primary/10 text-lg px-8 py-4" onClick={() => scrollToSection('curriculum')}>
                 XEM CHI TIẾT KHÓA HỌC
               </Button>
             </div>
@@ -273,25 +269,21 @@ const AICourseLanding = () => {
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              {painPoints.map((point, index) => (
-                <Card key={index} className="robot-card circuit-pattern">
+              {painPoints.map((point, index) => <Card key={index} className="robot-card circuit-pattern">
                   <CardContent className="p-6 text-center relative z-10">
-                    <div className="text-4xl mb-4 floating" style={{animationDelay: `${index * 0.5}s`}}>{point.icon}</div>
+                    <div className="text-4xl mb-4 floating" style={{
+                  animationDelay: `${index * 0.5}s`
+                }}>{point.icon}</div>
                     <p className="text-lg font-medium robot-text">{point.text}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
             
             <div className="text-center">
               <p className="text-2xl font-bold holographic mb-4" data-text="SOLUTION">
                 "Nếu câu trả lời là CÓ, khóa học này dành cho bạn!"
               </p>
-              <Button 
-                size="lg"
-                className="robot-btn bg-accent text-accent-foreground"
-                onClick={() => scrollToSection('solution')}
-              >
+              <Button size="lg" className="robot-btn bg-accent text-accent-foreground" onClick={() => scrollToSection('solution')}>
                 <Bot className="mr-2 w-5 h-5 robot-pulse" />
                 XEM GIẢI PHÁP
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -320,24 +312,18 @@ const AICourseLanding = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {beforeAfter.map((item, index) => (
-                      <tr key={index} className="border-b border-border/10">
+                    {beforeAfter.map((item, index) => <tr key={index} className="border-b border-border/10">
                         <td className="py-4 text-red-400">{item.before}</td>
                         <td className="text-center py-4">→</td>
                         <td className="py-4 text-accent font-semibold">{item.after}</td>
-                      </tr>
-                    ))}
+                      </tr>)}
                   </tbody>
                 </table>
               </div>
             </div>
             
             <div className="text-center">
-              <Button 
-                size="lg"
-                className="bg-secondary text-secondary-foreground hover:bg-secondary/90 glow-hover"
-                onClick={() => scrollToSection('curriculum')}
-              >
+              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 glow-hover" onClick={() => scrollToSection('curriculum')}>
                 Khám phá chương trình học
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -355,8 +341,7 @@ const AICourseLanding = () => {
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6 mb-12">
-              {curriculum.map((module, index) => (
-                <Card key={index} className="glass card-hover">
+              {curriculum.map((module, index) => <Card key={index} className="glass card-hover">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="text-3xl">{module.icon}</div>
@@ -366,16 +351,13 @@ const AICourseLanding = () => {
                       </div>
                     </div>
                     <ul className="space-y-2">
-                      {module.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start gap-2">
+                      {module.items.map((item, itemIndex) => <li key={itemIndex} className="flex items-start gap-2">
                           <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                           <span className="text-sm">{item}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
             
             {/* Bonus Section */}
@@ -442,14 +424,12 @@ const AICourseLanding = () => {
             
             {/* Features Grid */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {projectFeatures.map((feature, index) => (
-                <Card key={index} className="glass card-hover">
+              {projectFeatures.map((feature, index) => <Card key={index} className="glass card-hover">
                   <CardContent className="p-4 text-center">
                     <div className="text-2xl mb-2">{feature.icon}</div>
                     <p className="text-sm font-medium">{feature.text}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
             
             {/* Timeline */}
@@ -537,9 +517,7 @@ const AICourseLanding = () => {
               <Card className="glass glow">
                 <CardContent className="p-8 text-center">
                   <div className="flex justify-center mb-4">
-                    {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
+                    {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}
                   </div>
                   <p className="text-lg mb-6 italic">"{testimonials[activeTestimonial].text}"</p>
                   <div>
@@ -551,28 +529,18 @@ const AICourseLanding = () => {
               
               {/* Testimonial Dots */}
               <div className="flex justify-center gap-2 mt-6">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === activeTestimonial ? 'bg-primary' : 'bg-muted'
-                    }`}
-                    onClick={() => setActiveTestimonial(index)}
-                  />
-                ))}
+                {testimonials.map((_, index) => <button key={index} className={`w-3 h-3 rounded-full transition-colors ${index === activeTestimonial ? 'bg-primary' : 'bg-muted'}`} onClick={() => setActiveTestimonial(index)} />)}
               </div>
             </div>
             
             {/* Social Proof Numbers */}
             <div className="grid md:grid-cols-4 gap-6">
-              {socialProof.map((stat, index) => (
-                <Card key={index} className="glass card-hover">
+              {socialProof.map((stat, index) => <Card key={index} className="glass card-hover">
                   <CardContent className="p-6 text-center">
                     <div className="text-3xl font-bold text-gradient mb-2">{stat.number}</div>
                     <p className="text-sm text-muted-foreground">{stat.label}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -593,18 +561,10 @@ const AICourseLanding = () => {
                   <h3 className="text-2xl font-bold mb-4">TỰ HỌC MIỄN PHÍ</h3>
                   <div className="text-4xl font-bold mb-6 text-red-400">$0</div>
                   <div className="space-y-3 text-left">
-                    {[
-                      "Không có roadmap rõ ràng",
-                      "Mất 6+ tháng mới có kết quả",
-                      "Không có support",
-                      "Dễ bỏ cuộc giữa chừng",
-                      "Chất lượng không đảm bảo"
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center gap-2">
+                    {["Không có roadmap rõ ràng", "Mất 6+ tháng mới có kết quả", "Không có support", "Dễ bỏ cuộc giữa chừng", "Chất lượng không đảm bảo"].map((item, index) => <div key={index} className="flex items-center gap-2">
                         <X className="w-4 h-4 text-red-400" />
                         <span className="text-sm">{item}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
               </Card>
@@ -624,27 +584,13 @@ const AICourseLanding = () => {
                      <div className="text-sm text-accent">(Limited time)</div>
                    </div>
                   <div className="space-y-3 text-left mb-8">
-                    {[
-                      "Roadmap 7 ngày chi tiết",
-                      "Templates & prompts sẵn có",
-                      "1-1 support 30 ngày",
-                      "Cộng đồng học viên private",
-                      "Cam kết hoàn tiền 30 ngày",
-                      "Lifetime access",
-                      "Free updates"
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center gap-2">
+                    {["Roadmap 7 ngày chi tiết", "Templates & prompts sẵn có", "1-1 support 30 ngày", "Cộng đồng học viên private", "Cam kết hoàn tiền 30 ngày", "Lifetime access", "Free updates"].map((item, index) => <div key={index} className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-accent" />
                         <span className="text-sm">{item}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                   
-                   <Button 
-                     size="lg" 
-                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow"
-                     onClick={() => scrollToSection('final-cta')}
-                   >
+                   <Button size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow" onClick={() => scrollToSection('final-cta')}>
                      ĐĂNG KÝ NGAY - 14.999.000 đ
                    </Button>
                 </CardContent>
@@ -709,26 +655,19 @@ const AICourseLanding = () => {
             </h2>
             
             <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <Card key={index} className="glass">
+              {faqs.map((faq, index) => <Card key={index} className="glass">
                   <CardContent className="p-0">
-                    <button
-                      className="w-full text-left p-6 flex justify-between items-center hover:bg-muted/10 transition-colors"
-                      onClick={() => setActiveFAQ(activeFAQ === index ? null : index)}
-                    >
+                    <button className="w-full text-left p-6 flex justify-between items-center hover:bg-muted/10 transition-colors" onClick={() => setActiveFAQ(activeFAQ === index ? null : index)}>
                       <span className="font-semibold">❓ {faq.question}</span>
                       <ChevronDown className={`w-5 h-5 transition-transform ${activeFAQ === index ? 'rotate-180' : ''}`} />
                     </button>
-                    {activeFAQ === index && (
-                      <div className="px-6 pb-6">
+                    {activeFAQ === index && <div className="px-6 pb-6">
                         <div className="border-t border-border/20 pt-4">
                           <p className="text-muted-foreground">✅ {faq.answer}</p>
                         </div>
-                      </div>
-                    )}
+                      </div>}
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
@@ -771,11 +710,7 @@ const AICourseLanding = () => {
                   </div>
                 </div>
                 
-                 <Button 
-                   size="lg" 
-                   className="w-full max-w-md mx-auto bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow text-xl py-6"
-                   onClick={() => window.open('https://zalo.me/84708684608', '_blank')}
-                 >
+                 <Button size="lg" className="w-full max-w-md mx-auto bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow text-xl py-6" onClick={() => window.open('https://zalo.me/84708684608', '_blank')}>
                    ĐĂNG KÝ NGAY - 14.999.000 đ
                    <ArrowRight className="ml-2 w-6 h-6" />
                  </Button>
@@ -816,10 +751,7 @@ const AICourseLanding = () => {
                   <MessageCircle className="w-12 h-12 mx-auto mb-4 text-primary robot-pulse" />
                   <h3 className="text-xl font-bold mb-2">Zalo</h3>
                   <p className="text-muted-foreground mb-4">0708684608</p>
-                  <Button 
-                    className="w-full robot-btn bg-primary text-primary-foreground"
-                    onClick={() => window.open('https://zalo.me/84708684608', '_blank')}
-                  >
+                  <Button className="w-full robot-btn bg-primary text-primary-foreground" onClick={() => window.open('https://zalo.me/84708684608', '_blank')}>
                     Chat ngay trên Zalo
                   </Button>
                 </CardContent>
@@ -831,11 +763,7 @@ const AICourseLanding = () => {
                   <Phone className="w-12 h-12 mx-auto mb-4 text-accent robot-pulse" />
                   <h3 className="text-xl font-bold mb-2">Điện thoại</h3>
                   <p className="text-muted-foreground mb-4">0708684608</p>
-                  <Button 
-                    variant="outline" 
-                    className="w-full robot-card border-primary text-primary"
-                    onClick={() => window.open('tel:0708684608', '_self')}
-                  >
+                  <Button variant="outline" className="w-full robot-card border-primary text-primary" onClick={() => window.open('tel:0708684608', '_self')}>
                     Gọi ngay
                   </Button>
                 </CardContent>
@@ -847,11 +775,7 @@ const AICourseLanding = () => {
                   <MapPin className="w-12 h-12 mx-auto mb-4 text-secondary robot-pulse" />
                   <h3 className="text-xl font-bold mb-2">Địa chỉ</h3>
                   <p className="text-muted-foreground mb-4">Landmark 81, Quận Bình Thạnh, TPHCM</p>
-                  <Button 
-                    variant="outline" 
-                    className="w-full robot-card border-primary text-primary"
-                    onClick={() => window.open('https://maps.google.com/?q=Landmark+81,+Quận+Bình+Thạnh,+TPHCM', '_blank')}
-                  >
+                  <Button variant="outline" className="w-full robot-card border-primary text-primary" onClick={() => window.open('https://maps.google.com/?q=Landmark+81,+Quận+Bình+Thạnh,+TPHCM', '_blank')}>
                     Xem bản đồ
                   </Button>
                 </CardContent>
@@ -865,11 +789,7 @@ const AICourseLanding = () => {
                 <p className="text-muted-foreground mb-6">
                   Có thắc mắc về khóa học? Chat với chúng tôi ngay để được tư vấn chi tiết
                 </p>
-                <Button 
-                  size="lg"
-                  className="robot-btn bg-primary text-primary-foreground glow pulse-glow"
-                  onClick={() => window.open('https://zalo.me/84708684608', '_blank')}
-                >
+                <Button size="lg" className="robot-btn bg-primary text-primary-foreground glow pulse-glow" onClick={() => window.open('https://zalo.me/84708684608', '_blank')}>
                   <MessageCircle className="mr-2 w-5 h-5" />
                   Chat Zalo miễn phí
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -882,15 +802,10 @@ const AICourseLanding = () => {
 
       {/* Sticky Bottom CTA on Mobile */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/90 backdrop-blur-sm border-t border-border/20 md:hidden z-50">
-         <Button 
-           className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow"
-           onClick={() => window.open('https://zalo.me/84708684608', '_blank')}
-         >
+         <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow" onClick={() => window.open('https://zalo.me/84708684608', '_blank')}>
            Đăng ký ngay - 14.999.000 đ
          </Button>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default AICourseLanding;
