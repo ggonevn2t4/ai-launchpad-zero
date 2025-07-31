@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, CheckCircle, Star, Users, Award, Clock, DollarSign, Code, Zap, Target, Smartphone, Shield, ArrowRight, Play, X } from 'lucide-react';
+import { ChevronDown, CheckCircle, Star, Users, Award, Clock, DollarSign, Code, Zap, Target, Smartphone, Shield, ArrowRight, Play, X, Cpu, Bot } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-ai-course.jpg";
+import robotBg from "@/assets/robot-bg.jpg";
 
 const AICourseLanding = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -166,16 +167,19 @@ const AICourseLanding = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Sticky Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/20">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden robot-grid scanlines">
+      {/* Robot Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 robot-card border-b border-primary/20">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="text-xl font-bold text-gradient">AI Course</div>
+          <div className="flex items-center gap-3">
+            <Bot className="w-8 h-8 text-primary robot-pulse" />
+            <div className="text-xl font-bold holographic robot-text" data-text="AI COURSE">AI COURSE</div>
+          </div>
           <Button 
-            className="bg-primary text-primary-foreground hover:bg-primary/90 glow-hover font-semibold"
+            className="robot-btn text-primary-foreground font-semibold robot-text"
             onClick={() => scrollToSection('pricing')}
           >
-            Đăng ký ngay - $97
+            ĐĂNG KÝ NGAY - $97
           </Button>
         </div>
       </header>
@@ -205,10 +209,11 @@ const AICourseLanding = () => {
             {/* Stats Row */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {stats.map((stat, index) => (
-                <Card key={index} className="glass card-hover">
-                  <CardContent className="p-6 text-center">
-                    <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color}`} />
-                    <p className="font-semibold text-lg">{stat.text}</p>
+                <Card key={index} className="robot-card">
+                  <CardContent className="p-6 text-center relative z-10">
+                    <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color} robot-pulse`} />
+                    <p className="font-semibold text-lg robot-text">{stat.text}</p>
+                    <div className="loading-bar mt-4"></div>
                   </CardContent>
                 </Card>
               ))}
@@ -218,19 +223,20 @@ const AICourseLanding = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button 
                 size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow text-lg px-8 py-4"
+                className="robot-btn bg-primary text-primary-foreground text-lg px-8 py-4 relative"
                 onClick={() => scrollToSection('pricing')}
               >
-                Đăng ký ngay - $97
+                <Cpu className="mr-2 w-5 h-5 robot-pulse" />
+                ĐĂNG KÝ NGAY - $97
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-primary text-primary hover:bg-primary/10 text-lg px-8 py-4"
+                className="robot-card border-primary text-primary hover:bg-primary/10 text-lg px-8 py-4"
                 onClick={() => scrollToSection('curriculum')}
               >
-                Xem chi tiết khóa học
+                XEM CHI TIẾT KHÓA HỌC
               </Button>
             </div>
 
@@ -268,25 +274,26 @@ const AICourseLanding = () => {
             
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               {painPoints.map((point, index) => (
-                <Card key={index} className="glass card-hover">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-4xl mb-4">{point.icon}</div>
-                    <p className="text-lg font-medium">{point.text}</p>
+                <Card key={index} className="robot-card circuit-pattern">
+                  <CardContent className="p-6 text-center relative z-10">
+                    <div className="text-4xl mb-4 floating" style={{animationDelay: `${index * 0.5}s`}}>{point.icon}</div>
+                    <p className="text-lg font-medium robot-text">{point.text}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
             
             <div className="text-center">
-              <p className="text-2xl font-bold text-gradient mb-4">
+              <p className="text-2xl font-bold holographic mb-4" data-text="SOLUTION">
                 "Nếu câu trả lời là CÓ, khóa học này dành cho bạn!"
               </p>
               <Button 
                 size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 glow-hover"
+                className="robot-btn bg-accent text-accent-foreground"
                 onClick={() => scrollToSection('solution')}
               >
-                Xem giải pháp
+                <Bot className="mr-2 w-5 h-5 robot-pulse" />
+                XEM GIẢI PHÁP
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
