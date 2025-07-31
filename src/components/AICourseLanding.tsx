@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, CheckCircle, Star, Users, Award, Clock, DollarSign, Code, Zap, Target, Smartphone, Shield, ArrowRight, Play, X, Cpu, Bot } from 'lucide-react';
+import { ChevronDown, CheckCircle, Star, Users, Award, Clock, DollarSign, Code, Zap, Target, Smartphone, Shield, ArrowRight, Play, X, Cpu, Bot, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-ai-course.jpg";
@@ -179,7 +179,7 @@ const AICourseLanding = () => {
             className="robot-btn text-primary-foreground font-semibold robot-text"
             onClick={() => scrollToSection('pricing')}
           >
-            ĐĂNG KÝ NGAY - $97
+            ĐĂNG KÝ NGAY - 14.999.000 đ
           </Button>
         </div>
       </header>
@@ -227,7 +227,7 @@ const AICourseLanding = () => {
                 onClick={() => scrollToSection('pricing')}
               >
                 <Cpu className="mr-2 w-5 h-5 robot-pulse" />
-                ĐĂNG KÝ NGAY - $97
+                ĐĂNG KÝ NGAY - 14.999.000 đ
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
@@ -618,11 +618,11 @@ const AICourseLanding = () => {
                 </div>
                 <CardContent className="p-8 text-center">
                   <h3 className="text-2xl font-bold mb-4">KHÓA HỌC PREMIUM</h3>
-                  <div className="mb-6">
-                    <div className="text-sm text-muted-foreground line-through">$197</div>
-                    <div className="text-4xl font-bold text-gradient">$97</div>
-                    <div className="text-sm text-accent">(Limited time)</div>
-                  </div>
+                   <div className="mb-6">
+                     <div className="text-sm text-muted-foreground line-through">29.999.000 đ</div>
+                     <div className="text-4xl font-bold text-gradient">14.999.000 đ</div>
+                     <div className="text-sm text-accent">(Limited time)</div>
+                   </div>
                   <div className="space-y-3 text-left mb-8">
                     {[
                       "Roadmap 7 ngày chi tiết",
@@ -640,13 +640,13 @@ const AICourseLanding = () => {
                     ))}
                   </div>
                   
-                  <Button 
-                    size="lg" 
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow"
-                    onClick={() => scrollToSection('final-cta')}
-                  >
-                    ĐĂNG KÝ NGAY - $97
-                  </Button>
+                   <Button 
+                     size="lg" 
+                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow"
+                     onClick={() => scrollToSection('final-cta')}
+                   >
+                     ĐĂNG KÝ NGAY - 14.999.000 đ
+                   </Button>
                 </CardContent>
               </Card>
             </div>
@@ -656,30 +656,30 @@ const AICourseLanding = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-center mb-6">Phân tích giá trị</h3>
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="font-bold mb-4">Giá trị thực tế: $497</h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span>Khóa học:</span>
-                        <span>$297</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Templates:</span>
-                        <span>$97</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>1-1 Support:</span>
-                        <span>$97</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Cộng đồng:</span>
-                        <span>$50</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gradient mb-2">$97</div>
-                    <div className="text-accent font-bold">Tiết kiệm $400!</div>
+                   <div>
+                     <h4 className="font-bold mb-4">Giá trị thực tế: 24.999.000 đ</h4>
+                     <div className="space-y-2 text-sm">
+                       <div className="flex justify-between">
+                         <span>Khóa học:</span>
+                         <span>15.000.000 đ</span>
+                       </div>
+                       <div className="flex justify-between">
+                         <span>Templates:</span>
+                         <span>4.999.000 đ</span>
+                       </div>
+                       <div className="flex justify-between">
+                         <span>1-1 Support:</span>
+                         <span>4.000.000 đ</span>
+                       </div>
+                       <div className="flex justify-between">
+                         <span>Cộng đồng:</span>
+                         <span>1.000.000 đ</span>
+                       </div>
+                     </div>
+                   </div>
+                   <div className="text-center">
+                     <div className="text-3xl font-bold text-gradient mb-2">14.999.000 đ</div>
+                     <div className="text-accent font-bold">Tiết kiệm 10.000.000 đ!</div>
                     
                     {/* Urgency */}
                     <div className="mt-6 space-y-2">
@@ -751,12 +751,12 @@ const AICourseLanding = () => {
             {/* Final Offer Box */}
             <Card className="glass glow mb-12">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-gradient">🎯 ĐĂNG KÝ NGAY - CHỈ $97</h3>
+                <h3 className="text-2xl font-bold mb-6 text-gradient">🎯 ĐĂNG KÝ NGAY - CHỈ 14.999.000 đ</h3>
                 <div className="grid md:grid-cols-2 gap-4 mb-8 text-sm">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-accent" />
-                    <span>Tặng kèm $400 bonus materials</span>
-                  </div>
+                   <div className="flex items-center gap-2">
+                     <CheckCircle className="w-4 h-4 text-accent" />
+                     <span>Tặng kèm 10.000.000 đ bonus materials</span>
+                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4 text-red-400" />
                     <span>Ưu đãi kết thúc trong {timeLeft.hours}:{timeLeft.minutes.toString().padStart(2, '0')}:{timeLeft.seconds.toString().padStart(2, '0')}</span>
@@ -771,13 +771,14 @@ const AICourseLanding = () => {
                   </div>
                 </div>
                 
-                <Button 
-                  size="lg" 
-                  className="w-full max-w-md mx-auto bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow text-xl py-6"
-                >
-                  ĐĂNG KÝ NGAY - $97
-                  <ArrowRight className="ml-2 w-6 h-6" />
-                </Button>
+                 <Button 
+                   size="lg" 
+                   className="w-full max-w-md mx-auto bg-primary text-primary-foreground hover:bg-primary/90 glow pulse-glow text-xl py-6"
+                   onClick={() => window.open('https://zalo.me/84708684608', '_blank')}
+                 >
+                   ĐĂNG KÝ NGAY - 14.999.000 đ
+                   <ArrowRight className="ml-2 w-6 h-6" />
+                 </Button>
                 
                 {/* Security Badges */}
                 <div className="grid md:grid-cols-3 gap-4 mt-8 text-xs text-muted-foreground">
@@ -800,14 +801,93 @@ const AICourseLanding = () => {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-background-secondary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-16">
+              Liên hệ <span className="text-gradient">với chúng tôi</span>
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {/* Zalo Contact */}
+              <Card className="glass glow card-hover">
+                <CardContent className="p-6 text-center">
+                  <MessageCircle className="w-12 h-12 mx-auto mb-4 text-primary robot-pulse" />
+                  <h3 className="text-xl font-bold mb-2">Zalo</h3>
+                  <p className="text-muted-foreground mb-4">0708684608</p>
+                  <Button 
+                    className="w-full robot-btn bg-primary text-primary-foreground"
+                    onClick={() => window.open('https://zalo.me/84708684608', '_blank')}
+                  >
+                    Chat ngay trên Zalo
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Phone Contact */}
+              <Card className="glass">
+                <CardContent className="p-6 text-center">
+                  <Phone className="w-12 h-12 mx-auto mb-4 text-accent robot-pulse" />
+                  <h3 className="text-xl font-bold mb-2">Điện thoại</h3>
+                  <p className="text-muted-foreground mb-4">0708684608</p>
+                  <Button 
+                    variant="outline" 
+                    className="w-full robot-card border-primary text-primary"
+                    onClick={() => window.open('tel:0708684608', '_self')}
+                  >
+                    Gọi ngay
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Address */}
+              <Card className="glass">
+                <CardContent className="p-6 text-center">
+                  <MapPin className="w-12 h-12 mx-auto mb-4 text-secondary robot-pulse" />
+                  <h3 className="text-xl font-bold mb-2">Địa chỉ</h3>
+                  <p className="text-muted-foreground mb-4">Landmark 81, Quận Bình Thạnh, TPHCM</p>
+                  <Button 
+                    variant="outline" 
+                    className="w-full robot-card border-primary text-primary"
+                    onClick={() => window.open('https://maps.google.com/?q=Landmark+81,+Quận+Bình+Thạnh,+TPHCM', '_blank')}
+                  >
+                    Xem bản đồ
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Final CTA */}
+            <Card className="glass glow">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-gradient">💬 Tư vấn miễn phí qua Zalo</h3>
+                <p className="text-muted-foreground mb-6">
+                  Có thắc mắc về khóa học? Chat với chúng tôi ngay để được tư vấn chi tiết
+                </p>
+                <Button 
+                  size="lg"
+                  className="robot-btn bg-primary text-primary-foreground glow pulse-glow"
+                  onClick={() => window.open('https://zalo.me/84708684608', '_blank')}
+                >
+                  <MessageCircle className="mr-2 w-5 h-5" />
+                  Chat Zalo miễn phí
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Sticky Bottom CTA on Mobile */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/90 backdrop-blur-sm border-t border-border/20 md:hidden z-50">
-        <Button 
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow"
-          onClick={() => scrollToSection('final-cta')}
-        >
-          Đăng ký ngay - $97
-        </Button>
+         <Button 
+           className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow"
+           onClick={() => window.open('https://zalo.me/84708684608', '_blank')}
+         >
+           Đăng ký ngay - 14.999.000 đ
+         </Button>
       </div>
     </div>
   );
