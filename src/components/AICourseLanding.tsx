@@ -737,68 +737,7 @@ const AICourseLanding = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-background-secondary">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16">
-              Liên hệ <span className="text-gradient">với chúng tôi</span>
-            </h2>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {/* Zalo Contact */}
-              <Card className="glass glow card-hover">
-                <CardContent className="p-6 text-center">
-                  <MessageCircle className="w-12 h-12 mx-auto mb-4 text-primary robot-pulse" />
-                  <h3 className="text-xl font-bold mb-2">Zalo</h3>
-                  <p className="text-muted-foreground mb-4">0708684608</p>
-                  <Button className="w-full robot-btn bg-primary text-primary-foreground" onClick={() => window.open('https://zalo.me/84708684608', '_blank')}>
-                    Chat ngay trên Zalo
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Phone Contact */}
-              <Card className="glass">
-                <CardContent className="p-6 text-center">
-                  <Phone className="w-12 h-12 mx-auto mb-4 text-accent robot-pulse" />
-                  <h3 className="text-xl font-bold mb-2">Điện thoại</h3>
-                  <p className="text-muted-foreground mb-4">0708684608</p>
-                  <Button variant="outline" className="w-full robot-card border-primary text-primary" onClick={() => window.open('tel:0708684608', '_self')}>
-                    Gọi ngay
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Address */}
-              <Card className="glass">
-                <CardContent className="p-6 text-center">
-                  <MapPin className="w-12 h-12 mx-auto mb-4 text-secondary robot-pulse" />
-                  <h3 className="text-xl font-bold mb-2">Địa chỉ</h3>
-                  <p className="text-muted-foreground mb-4">Landmark 81, Quận Bình Thạnh, TPHCM</p>
-                  <Button variant="outline" className="w-full robot-card border-primary text-primary" onClick={() => window.open('https://maps.google.com/?q=Landmark+81,+Quận+Bình+Thạnh,+TPHCM', '_blank')}>
-                    Xem bản đồ
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Final CTA */}
-            <Card className="glass glow">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4 text-gradient">💬 Tư vấn miễn phí qua Zalo</h3>
-                <p className="text-muted-foreground mb-6">
-                  Có thắc mắc về khóa học? Chat với chúng tôi ngay để được tư vấn chi tiết
-                </p>
-                <Button size="lg" className="robot-btn bg-primary text-primary-foreground glow pulse-glow" onClick={() => window.open('https://zalo.me/84708684608', '_blank')}>
-                  <MessageCircle className="mr-2 w-5 h-5" />
-                  Chat Zalo miễn phí
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Sticky Bottom CTA on Mobile */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/90 backdrop-blur-sm border-t border-border/20 md:hidden z-50">
